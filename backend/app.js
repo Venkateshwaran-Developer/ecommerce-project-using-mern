@@ -6,7 +6,6 @@ const connectDatabase = require('./config/connectDatabase');
 const products =require('./routes/products');
 const orders = require('./routes/order');
 const cors = require('cors');
-const port = process.env.PORT || 8000; 
 dotenv.config({path:path.join(__dirname,'config','config.env')})
 
 connectDatabase();
@@ -16,8 +15,8 @@ app.use(cors());
 app.use('/api/v1',products);
 app.use('/api/v1',orders);
 
-app.listen(port, ()=>{
-    console.log(`this app is running on ${port} port in ${process.env.NODE_ENV}`)
+app.listen(process.env.PORT, ()=>{
+    console.log(`this app is running on ${process.env.PORT} port in ${process.env.NODE_ENV}`)
 })
 
 
