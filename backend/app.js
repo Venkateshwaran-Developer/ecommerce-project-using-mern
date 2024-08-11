@@ -6,7 +6,7 @@ const connectDatabase = require('./config/connectDatabase');
 const products =require('./routes/products');
 const orders = require('./routes/order');
 const cors = require('cors');
-
+const port = process.env.PORT || 8000; 
 dotenv.config({path:path.join(__dirname,'config','config.env')})
 
 connectDatabase();
